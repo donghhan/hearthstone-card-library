@@ -1,0 +1,43 @@
+@use "./animations";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tillana", cursive;
+  background-image: url("/src/image/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  backdrop-filter: blur(10px) brightness(60%);
+  width: 100%;
+  min-height: 100vh;
+  @include animations.animation(background_fade_in, 0s, 5s);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+span {
+  display: inline-block;
+}
+
+// Animation
+@include animations.keyframe(background_fade_in) {
+  0% {
+    backdrop-filter: blur(10px) brightness(0%);
+  }
+
+  100% {
+    backdrop-filter: blur(10px) brightness(60%);
+  }
+}
