@@ -63,10 +63,6 @@ module.exports = {
         // image configuration
         test: /\.(png|jpg|gif|svg|jpeg)$/i,
         type: "asset/resource",
-        loader: "file-loader",
-        options: {
-          name: "assets/[contenthash].[ext]",
-        },
       },
       {
         // font configuration
