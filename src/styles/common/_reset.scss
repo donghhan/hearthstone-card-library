@@ -1,4 +1,5 @@
 @use "./animations";
+@use "./variable";
 
 * {
   margin: 0;
@@ -14,11 +15,12 @@ body {
   backdrop-filter: blur(10px) brightness(60%);
   width: 100%;
   min-height: 100vh;
-  @include animations.animation(background_fade_in, 0s, 5s);
+  color: variable.$white;
 }
 
 a {
   text-decoration: none;
+  color: variable.$white;
 }
 
 ul,
