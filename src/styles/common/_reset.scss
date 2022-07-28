@@ -9,18 +9,21 @@
 
 body {
   font-family: "Tillana", cursive;
-  background-image: url("/src/image/background.jpg");
+  // background-image: url("/src/image/main_background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   backdrop-filter: blur(10px) brightness(60%);
   width: 100%;
-  min-height: 100vh;
+  min-height: 200vh;
   color: variable.$white;
+  position: relative;
 }
 
 a {
   text-decoration: none;
   color: variable.$white;
+  display: inline-block;
+  position: relative;
 }
 
 ul,

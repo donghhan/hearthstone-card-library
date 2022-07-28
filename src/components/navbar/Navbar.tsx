@@ -1,42 +1,28 @@
 import React, { useState } from "react";
-import "../../styles/navbar/navbar.scss";
+import { motion, useCycle } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import { Path } from "../../utils/path";
-import HamburgerButton from "./Hamburger";
+import { ISlideConfig, PageSlides, SlideParallaxType } from "react-page-slides";
+// Style
+import "../../styles/navbar/navbar.scss";
+// Component
+import NavItem from "./NavItem";
+
+const NavItems = [
+  { id: "0", navLinkText: "home", to: "/" },
+  { id: "1", navLinkText: "sets", to: "/sets" },
+  { id: "2", navLinkText: "cards", to: "/cards" },
+  { id: "3", navLinkText: "classes", to: "/classes" },
+  { id: "4", navLinkText: "backs", to: "/backs" },
+];
 
 export default function Navbar() {
-  let activeClassName = "active";
-
-  const [navToggle, setNavToggle] = useState<boolean>(false);
-  const handleNavToggle = () => {
-    setNavToggle(!navToggle);
-    console.log(navToggle);
-  };
-
   return (
     <nav>
-      <HamburgerButton onClick={handleNavToggle} navToggle={navToggle} />
       <ul>
-        <li>
-          <NavLink
-            to={Path.Expansion}
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
-          >
-            Expansions
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to={Path.Cards}
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
-          >
-            Cards
-          </NavLink>
-        </li>
+        {NavItems.map((item) => (
+          <NavItem id={item.id} navLinkText={item.navLinkText} to={item.to} />
+        ))}
       </ul>
     </nav>
   );

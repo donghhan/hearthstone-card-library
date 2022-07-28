@@ -1,5 +1,6 @@
-export enum Path {
-  Home = "/",
-  Expansion = "/expansion",
-  Cards = "/cards",
-}
+export const Path = {
+  Home: "/",
+  Expansion: "/sets",
+  Cards: "/cards",
+  Etc: "/etc",
+};
